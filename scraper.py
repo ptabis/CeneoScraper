@@ -26,6 +26,14 @@ tags = {
     "purchased": ["div", "product-review-pz"],
 }
 
+#funkcja do usuwania znaków formatujących
+def remove_whitespace(string):
+    try:
+        return string.replace('\n', ', ').replace('\r', ', ')
+    except AttributeError:
+        return None
+
+
 #adres URL przykładowej strony z opiniami
 url_prefix = "https://www.ceneo.pl"
 product_id = input("Podaj kod produktu: ")
@@ -52,7 +60,12 @@ while url:
         }
 
         features['purchased'] = (features['purchased'] == "Opinia potwierdzona zakupem")
-        features['opinion_id'] = opinion["data-entry-id"]
+        features['opinion_id'] = int(opinion["data-entry-id"])
+        features['useful'] = int(features['useful'])
+        features['useless'] = int(features['useless'])
+        features['content'] = remove_whitespace(features['content'])
+        features['pros'] = remove_whitespace(features['pros'])
+        features['cons'] = remove_whitespace(features['cons'])
         dates = opinion.find("span", "review-time").find_all("time")
         features['review_date'] = dates.pop(0)["datetime"]
         try:
