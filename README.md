@@ -1,4 +1,6 @@
 # CeneoScraper12S
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fptabis%2FCeneoScraper.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fptabis%2FCeneoScraper?ref=badge_shield)
+
 ## Etap 1 - pobranie składowych pojedynczej opinii
 - opinia: `li.review-box`
 - identyfikator: `li.review-box["data-entry-id"]`
@@ -29,3 +31,6 @@
 - zapis danych do obiektu dataframe (ramka danych)
 - wykonanie podstawowych obliczeń do danych w ramce danych
 - wykonanie prostych wykresów na podstawie danych w ramce danych
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fptabis%2FCeneoScraper.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fptabis%2FCeneoScraper?ref=badge_large)
